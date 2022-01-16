@@ -1,11 +1,27 @@
 public class Squirrel {
-    int weight;
-    int numOfConesInNest;
-    boolean hungry;
-    int age;
+    private int weight;
+    private int numOfConesInNest;
+    private boolean hungry;
+    private int age;
+    private String name;
 
-    public Squirrel (){
+    public Squirrel (int weight, int numOfConesInNest, boolean hungry, int age, String name){
+        this.weight = weight;
+        this.numOfConesInNest = numOfConesInNest;
         this.hungry = hungry;
+        this.age = age;
+        this.name = name;
+    }
+
+    //fix method eat so that it works! it should remove one cone from numOfConesInNest
+
+    public void eat(int numOfConesInNest){
+
+        if (this.hungry == true && numOfConesInNest > 0) {
+            numOfConesInNest = this.numOfConesInNest - 1;
+            this.hungry = false;
+
+        }
     }
 
     public int getWeight() {return weight;}
@@ -20,21 +36,16 @@ public class Squirrel {
     public int getAge() {return age;}
     public void setAge(int age) {this.age = age;}
 
-    public boolean eat(boolean hungry, int numOfConesInNest){
+    public String getName() {return name;}
+    public void setName(String name) {this.name = name;}
 
-        if(hungry == true && numOfConesInNest > 0){
-            numOfConesInNest--;
-            boolean eating = true;
-            hungry = false;
-            return eating;
-        }else if(hungry == true && numOfConesInNest <= 0) {
-            boolean eating = false;
-            return eating;
-        }
-        else{
-            boolean eating = false;
-            return eating;
-        }
+
+    @Override
+    public String toString() {
+        return "The squirrel " + name + " weighs " + weight + " g, is " + age + " years old, have " + numOfConesInNest + " cones in its nest, and the hungerfeelings is " + hungry + "!";
     }
+
 }
+
+
 
