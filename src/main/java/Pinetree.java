@@ -6,20 +6,27 @@ public class Pinetree {
     private int age;
     private int pests;
     private Owl owl;
-    private int numOfSquirrels;
     private ArrayList<Squirrel> squirrels;
 
-    public Pinetree(int numOfCones, int age, int pests, Owl owl, int numOfSquirrels, ArrayList<Squirrel> squirrels){
+    public Pinetree(int numOfCones, int age, int pests, Owl owl, ArrayList<Squirrel> squirrels){
         this.numOfCones = numOfCones;
         this.age = age;
         this.pests = pests;
         this.owl = owl;
-        this.numOfSquirrels = numOfSquirrels;
         this.squirrels = squirrels;
     }
 
+    public void fall(int pests, int age){
+        this.pests = pests;
+        if(pests>10&&age>400){
+            System.out.println("Oh no! The pinetree fell because of old age and all the pests");
+        }else if(pests<5&&pests>0&&age>400){
+            System.out.println("There is some pests in the pinetree and the tree is old, it may fall!");
+        }else{
+            System.out.println("This pinetree is healthy and will not fall for some time.");
+        }
 
-    // add method fall() + change methods with numberOfSquirrels so that it matches the arrayList.
+    }
 
     public int getNumOfCones() {return numOfCones;}
     public void setNumOfCones(int numOfCones) {this.numOfCones = numOfCones;}
@@ -33,21 +40,12 @@ public class Pinetree {
     public Owl getOwl() {return owl;}
     public void setOwl(Owl owl) {this.owl = owl;}
 
-    public int getNumOfSquirrels() {return numOfSquirrels;}
-    public void setNumOfSquirrels(int numOfSquirrels) {this.numOfSquirrels = numOfSquirrels;}
-
     public ArrayList<Squirrel> getSquirrels() {return squirrels;}
     public void setSquirrels(ArrayList<Squirrel> squirrels) {this.squirrels = squirrels;}
 
     @Override
     public String toString() {
-        if (pests > 5) {
-            return "This tree is sick because of all the pests";
-        } else if (pests < 5 && pests > 0) {
-            return "In this tree lives " + numOfSquirrels + " squirrels and an owl." + " It is almost pest-free, have " + numOfCones + " cones, and is " + age + " years old!";
-        } else if (pests <= 0) {
-            return "In this tree lives " + numOfSquirrels + " squirrels and an owl." + " It is pest-free, have " + numOfCones + " cones, and is " + age + " years old!";
-        }
-        return null;
+        return "In this tree lives " + squirrels.size() + " squirrels and an owl." + " It got " + pests + " pests and " + numOfCones + " cones, and is " + age + " years old!";
+
     }
 }

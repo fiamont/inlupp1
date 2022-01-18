@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Owl {
     private int wingSpan;
@@ -15,12 +16,20 @@ public class Owl {
         this.name = name;
     }
 
-    // fix method eat, if night & hungry --> use method random and remove
-    // one or none squirrel from arraylist, if success, hungry changes to false
-
     public void eat(boolean night, boolean hungry, ArrayList<Squirrel> squirrels){
-        if(night==true&&hungry==true){
+        Random random = new Random();
+        int successOrNot = random.nextInt(1);
+        if(night==true && hungry==true && successOrNot==1){
+            int randomSquirrel = random.nextInt(squirrels.size());
+            squirrels.remove(randomSquirrel);
+            hungry = false;
+            for (int i = 0; i < squirrels.size(); i++) {
+                squirrels.get(i);
+            }
+        }else if(night==true && hungry==true && successOrNot==0){
+            System.out.println(this.name + " failed! The squirrel escaped!");
         }else{
+            System.out.println("All the squirrels are safe.");
         }
     }
 
