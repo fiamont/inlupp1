@@ -11,25 +11,21 @@ public class Main {
         squirrelList.add(jumper);
         squirrelList.add(kukui);
 
-
         Owl hedvig = new Owl(91, true,7,456, "Hedvig");
 
         Pinetree pinetree = new Pinetree(38, 103, 0, hedvig, squirrelList);
-        System.out.println(pinetree.toString());
-        pinetree.fall(0, 103);
 
-        System.out.println("\n" + hedvig.toString());
+        System.out.println(pinetree.toString());
         System.out.println("\n" + tintin.toString());
         System.out.println(jumper.toString());
         System.out.println(kukui.toString());
+        System.out.println("\n" + hedvig.toString());
 
-        System.out.println("\nTintin " + tintin.eat(true,9));
-        System.out.println("Jumper " + jumper.eat(false,11));
-        System.out.println("Kukui " + kukui.eat(true,5) + "\n");
-
-        boolean night = true;
-
-        hedvig.eat(night, true, squirrelList);
+        System.out.println("\nDid the tree fall?: " + pinetree.fall(0,103));
+        System.out.println("Did the squirrel Tintin eat?: " + tintin.eat(true,9));
+        System.out.println("Did the squirrel Jumper eat?: " + jumper.eat(false,11));
+        System.out.println("Did the squirrel Kukui eat?: " + kukui.eat(true,5));
+        System.out.println("Did the owl Hedvig eat?: " + hedvig.eat(true,true));
 
     }
 }

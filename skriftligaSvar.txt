@@ -1,1 +1,2 @@
 Svar på fråga 1:
+Att romberna är tomma innebär att classerna Owl och Squirrel inte är beroende av att Pinetree finns (om de hade varit ifyllda/svarta hade de varit beroende av det, dvs, om Pinetree inte fanns så skulle Owl och Squirrel inte funka.

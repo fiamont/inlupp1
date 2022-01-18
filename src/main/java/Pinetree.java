@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Pinetree {
     private int numOfCones;
@@ -16,16 +15,8 @@ public class Pinetree {
         this.squirrels = squirrels;
     }
 
-    public void fall(int pests, int age){
-        this.pests = pests;
-        if(pests>10&&age>400){
-            System.out.println("Oh no! The pinetree fell because of old age and all the pests");
-        }else if(pests<5&&pests>0&&age>400){
-            System.out.println("There is some pests in the pinetree and the tree is old, it may fall!");
-        }else{
-            System.out.println("This pinetree is healthy and will not fall for some time.");
-        }
-
+    public boolean fall(int pests, int age){
+            return (pests>10&&age>400);
     }
 
     public int getNumOfCones() {return numOfCones;}

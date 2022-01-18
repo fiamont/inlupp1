@@ -13,17 +13,8 @@ public class Squirrel {
         this.name = name;
     }
 
-    public String eat(boolean hungry, int numOfConesInNest){
-        if (hungry == true && numOfConesInNest > 0) {
-            numOfConesInNest--;
-            hungry=false;
-            return "is no longer hungry, number of cones in nest are now: " + numOfConesInNest;
-        }else if(hungry==true&&numOfConesInNest<=0){
-            return "is still hungry!! there are no cones left!";
-        }else{
-            return "isn't hungry now";
-        }
-
+    public boolean eat(boolean hungry, int numOfConesInNest){
+        return (hungry && numOfConesInNest>0);
     }
 
     public int getWeight() {return weight;}
@@ -44,7 +35,7 @@ public class Squirrel {
 
     @Override
     public String toString() {
-        return "The squirrel " + name + " weighs " + weight + " g, is " + age + " years old, have " + numOfConesInNest + " cones in its nest, and the hungerfeelings are now " + hungry + "!";
+        return "The squirrel " + name + " weighs " + weight + " g, is " + age + " years old, have " + numOfConesInNest + " cones in its nest, and the hungerfeelings " + hungry + "!";
     }
 
 }

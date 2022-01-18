@@ -16,21 +16,10 @@ public class Owl {
         this.name = name;
     }
 
-    public void eat(boolean night, boolean hungry, ArrayList<Squirrel> squirrels){
+    public boolean eat(boolean night, boolean hungry){
         Random random = new Random();
-        int successOrNot = random.nextInt(1);
-        if(night==true && hungry==true && successOrNot==1){
-            int randomSquirrel = random.nextInt(squirrels.size());
-            squirrels.remove(randomSquirrel);
-            hungry = false;
-            for (int i = 0; i < squirrels.size(); i++) {
-                squirrels.get(i);
-            }
-        }else if(night==true && hungry==true && successOrNot==0){
-            System.out.println(this.name + " failed! The squirrel escaped!");
-        }else{
-            System.out.println("All the squirrels are safe.");
-        }
+        int successOrNot = random.nextInt(2);
+        return (night && hungry && successOrNot==1);
     }
 
     public int getWingSpan() {return wingSpan;}
